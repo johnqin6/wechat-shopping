@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="header">
+  <view class="header-info">
+    <view class="message">
+      <image src="../../images/message.png" class="message-icon"/>
+    </view>
+    <view class="search-box">
+      <image src="../../images/search.png" class="search-icon"/>
+      <text class="search-text">{{searchText}}</text>
+    </view>
+    <view class="qcode">
+      <image src="../../images/qcode.png" class="qcode-icon"/>
+    </view>
+  </view>
+  <scroll-view scroll-x class="header-product-type">
+    <view class="type-item" wx:for="{{shoppTypeList}}" wx:for-item="type" wx:for-key="{{index}}">
+      {{type.text}}
+    </view>
+  </scroll-view>
+  <view class="type-all">
+    <image src="../../images/arrow.png" class="arrow-icon" />
+  </view>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" class="swiper-box"
+  autoplay="{{autoplay}}"  duration="{{duration}}" indicator-active-color="#fff">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
